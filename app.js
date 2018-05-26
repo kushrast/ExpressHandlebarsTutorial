@@ -22,9 +22,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -43,4 +40,25 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+var router = express.Router();
+
+router.get('/', function(req, res, next) {
+	res.render('index', {
+		title: 'Node Tutorial'
+	});
+});
+
+router.post('/', function(req, res, next) {
+	var body = req.body;
+
+	var res_body = {
+		first_name: body.first_name,
+		last_name: body.last_name,
+		email: body.email
+	};
+
+	res.render('welcome', res_body);
+})
+
+console.log('Listening on PORT');
+app.listen(process.env.PORT);
