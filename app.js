@@ -6,9 +6,6 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 
-var index = require('./routes/index'); //index variable refers to index.js file that includes more routing code
-var users = require('./routes/users');
-
 var app = express();
 
 app.set('views', path.join(__dirname, 'views')) //lets system know views are in /views
