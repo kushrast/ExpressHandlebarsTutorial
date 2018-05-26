@@ -1,6 +1,6 @@
 
 var express = require('express'); //loads express middleware
-var cookieParser = require('cookieParser'); //loads cookie parser library
+var cookieParser = require('cookie-parser'); //loads cookie parser library
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
