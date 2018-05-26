@@ -9,7 +9,7 @@ var bodyParser = require('body-parser');
 var app = express();
 
 app.set('views', path.join(__dirname, 'views')) //lets system know views are in /views
-app.set('view enginer', 'hbs'); //sets handlebars as the view system
+app.set('view engine', 'hbs'); //sets handlebars as the view system
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
